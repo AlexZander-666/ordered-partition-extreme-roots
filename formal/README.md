@@ -1,0 +1,3 @@
+# Extreme zeros of labelled ordered set partitions
+
+The modules listed in modules.txt form the transitive local import closure of the module in entry.txt. Install the exact elan toolchain in lean-toolchain. In a separate directory, fetch the external Lake packages pinned in lake-manifest.json and build or download the matching external package objects. Extract the source ZIP in a fresh directory, then run `python3 -Bu verify.py /absolute/path/to/the/other/.lake/packages 4`. The verifier checks the external repository commits, starts with zero local project objects, builds the entry, checks reported axioms, and independently replays every project module.

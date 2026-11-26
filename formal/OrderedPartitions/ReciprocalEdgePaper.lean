@@ -1,0 +1,11 @@
+import OrderedPartitions.ReciprocalEdgeRankWindow
+import OrderedPartitions.ReciprocalEdgeFirstCorrectionFormula
+import OrderedPartitions.ReciprocalEdgeOuterPrefixTwo
+
+/-! Exact formal entry points for the extreme-root manuscript. -/
+#print axioms OrderedPartitions.ReciprocalSector.original_rank_window
+#print axioms OrderedPartitions.ReciprocalSector.all_original_first_correction
+#print axioms OrderedPartitions.ReciprocalSector.OriginalAsymptoticPrefix.indexed_drift
+#print axioms OrderedPartitions.ReciprocalEdge.reciprocalCorrectionCoeff_formula
+#print axioms OrderedPartitions.ReciprocalEdge.H_two
+#print axioms OrderedPartitions.ReciprocalEdge.eventually_two_outer_prefix

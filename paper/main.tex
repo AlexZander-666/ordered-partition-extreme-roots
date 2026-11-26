@@ -1,0 +1,244 @@
+\documentclass[11pt]{amsart}
+\usepackage{amssymb,amsmath}
+\usepackage[hidelinks]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\setlength{\emergencystretch}{2em}
+\addtolength{\textheight}{3\baselineskip}
+\hypersetup{pdftitle={Extreme zeros of ordered set-partition polynomials at a fixed block-size threshold},pdfauthor={Bowen Zuo}}
+\title[Extreme zeros of ordered set partitions]{Extreme zeros of ordered set-partition polynomials at a fixed block-size threshold}
+\author{Bowen Zuo}
+\address{East China University of Science and Technology}
+\date{November 27, 2026}
+\begin{document}
+\begin{abstract}
+Give each block of size at least $j$ in a labelled ordered set partition
+weight $t$. For every fixed $j\ge2$, any fixed number of zeros of
+largest modulus are simple and negative in all sufficiently large rows.
+These outer prefixes alternate pairwise throughout a window of $j+1$
+consecutive rows, with orientation determined by the degrees. The
+reciprocal polynomial has a Mittag--Leffler limit. Its first correction
+orders corresponding roots one full threshold apart, where the leading
+terms coincide.
+\end{abstract}
+\maketitle
+
+\section{Statement}
+Let $O_{n,j}(t)$ sum $t^{\#\{i:|B_i|\ge j\}}$ over lists
+$(B_1,\ldots,B_\ell)$ of disjoint nonempty blocks with union $[n]$,
+so each ordering of an unordered partition with $\ell$ blocks is counted.
+The empty list has weight one. The degree is $\lfloor n/j\rfloor$,
+attained by taking blocks of size $j$ and the remaining singletons.
+The all-singleton lists give a positive constant term. Alexandersson
+conjectures real-rootedness and consecutive interlacing for these
+ordered rows~\cite{catalog}. We treat a fixed number of roots while
+the degree increases. For the separate unordered model at threshold four,
+Fang~\cite[Theorems 1 and 4]{fang} proves eventual interlacing of the
+whole rows, using the same limiting functions up to constant factors
+and an outer-root correction at distance four on the $d^5$ scale.
+For ordered rows the scale is $d^j$, and the two-term expansion below
+holds at every fixed threshold. Put
+$b=1+1/(j+1)$, $G=j!b^j$ and
+\[
+ F_r(w)=\sum_{h\ge0}\frac{w^h}{(jh+r)!},\qquad 0\le r<j .
+\]
+Write $-\lambda_{r,k}$ for its zeros in increasing order of modulus,
+starting at $k=1$.
+
+\begin{theorem}\label{thm}
+Fix integers $j\ge2$ and $K\ge1$. For all sufficiently large $n$,
+the $K+1$ zeros of greatest modulus of $O_{n,j}$ are simple and negative.
+Write them as $x_{n,1}<\cdots<x_{n,K+1}<0$. Every remaining
+zero has modulus strictly less than $|x_{n,K+1}|$.
+For $n<m\le n+j$ and $1\le k\le K$,
+\[
+\begin{array}{ll}
+ x_{n,k}<x_{m,k}<x_{n,k+1},&\lfloor n/j\rfloor=\lfloor m/j\rfloor,\\
+ x_{m,k}<x_{n,k}<x_{m,k+1},&\lfloor m/j\rfloor=\lfloor n/j\rfloor+1.
+\end{array}
+\]
+For each fixed $r,k$ there is a constant $C_{r,k}$ such that
+\[
+ x_{jd+r,k}=-\frac{G}{\lambda_{r,k}}d^j+C_{r,k}d^{j-1}+o(d^{j-1}).
+\]
+\end{theorem}
+The onset may depend on both $j$ and $K$. At $j=2$, the two limiting
+functions at $w=-y^2$ are $\cos y$ and $\sin(y)/y$. Along even rows
+the limit of $x_{2d,k}/d^2$ is $-32/(9\pi^2(k-1/2)^2)$, and along
+odd rows the limit of $x_{2d+1,k}/d^2$ is $-32/(9\pi^2k^2)$.
+
+\section{Reversing the large-block count}
+Write $A=\sum_{i=1}^{j-1}z^i/i!$, $B=\sum_{i\ge j}z^i/i!$,
+$V=(1-A)^{-1}$, $U=j!B/z^j$ and $H=UV$. The $k$ large blocks
+separate $k+1$ possibly empty ordered lists of small blocks. The
+labelled product rule gives $[t^k]O_{n,j}/n!=[z^n]B^kV^{k+1}$.
+For $n=jd+r$, $d\ge1$, take the polynomial extension at zero of
+\[
+ R_d(w)=\frac{(j!)^d}{n!(bd)^r}
+     \left(\frac{w}{Gd^j}\right)^d O_{n,j}(Gd^j/w).
+\]
+For $0\le h\le d$, set $m=jh+r$. Then
+\[
+  a_{d,h}=[w^h]R_d=\frac{[z^m](VH^{d-h})}{(bd)^m}.
+\]
+Set $a_{d,h}=0$ for $h>d$. The constant terms of $V,H$ are one.
+Their linear coefficients
+are $1,b$, respectively. Direct multiplication gives
+\[
+c=[z^2]H=1+\tfrac12{\bf1}_{j\ge3}+\frac1{j+1}+\frac1{(j+1)(j+2)}.
+\]
+
+\begin{lemma}\label{corr}
+Uniformly on every closed disk, $d(R_d-F_r)\to E_r$, where
+$E_r(w)=\sum_{h\ge0}e_hw^h$ and
+\[
+ e_h=-\frac{mh+m(m-1)/2}{m!}
+      +\frac{1/b}{(m-1)!}+\frac{c/b^2}{(m-2)!},\qquad m=jh+r .
+\]
+A reciprocal factorial with a negative argument denotes zero.
+\end{lemma}
+\begin{proof}
+For fixed $m$ put $D=d-h$. Selecting $m$ linear terms of $H^D$
+contributes $b^m\binom Dm$ to $[z^m]VH^D$.
+Two other choices have degree $m-1$ in $D$. Taking the linear term of $V$
+gives $b^{m-1}\binom D{m-1}$. Taking a quadratic term of $H$ gives
+$(m-1)cb^{m-2}\binom D{m-1}$ when $m\ge2$. All further
+terms use at most $m-2$ nonconstant factors of $H$. Expansion of
+the falling factorial $(D)_m$ proves the coefficient limit, including
+$m=1$. For $m=0$ the coefficient is exactly one.
+
+Use $\preceq$ for coefficientwise comparison. Since $A\preceq z/(1-z)$,
+the geometric series yields $V\preceq(1-z)/(1-2z)$. Moreover,
+$U\preceq1/(1-z)$, so $H\preceq1/(1-2z)$ and both $[z^i]V$ and
+$[z^i]H$ are at most $2^i$. For $h\le d$ compare the normalized all-linear
+term with $1/m!$ using the factors $\max(0,1-(h+i)/d)$, $0\le i<m$.
+Their product vanishes when $D<m$ and agrees with $(D)_m/d^m$ in all cases.
+One minus their product is bounded by the sum of their deficits. After
+multiplication by $d/m!$ the bound is $(mh+m(m-1)/2)/m!$.
+For the other terms the degree drawn from $V$ is positive or some
+factor of $H$ contributes at least two. Removing one unit from $V$
+or two from a chosen factor of $H$ leaves at most
+$\binom{D+m-1}{m-1}$ or $D\binom{D+m-2}{m-2}$ possibilities.
+Each term weighs at most $2^m$. Since $m\le jd+r$, their normalized
+contribution after multiplication by $d$ is bounded by
+\[
+ (2/b)^m\left(\frac{(1+j+r)^{m-1}}{(m-1)!}
+             +\frac{(1+j+r)^{m-2}}{(m-2)!}\right).
+\]
+Terms for absent selections are omitted. For $h>d$ the bound
+$d/m!\le h/m!$ suffices. These majorants remain summable after
+multiplication by $R^h$ for every fixed $R>0$.
+\end{proof}
+
+\section{The limiting zeros}
+The functions $F_r$ are the Mittag--Leffler functions $E_{j,r+1}$
+and the $j$-sections of $e^z$. Popov and Sedletskii~\cite{ps} give
+a general treatment of Mittag--Leffler zeros. Athanasiadis and
+Wagner~\cite[Theorem 5.3 and Remark 5.4]{aw} establish interlacing
+in the weak sense for sections of P\'olya frequency series. We need
+simple zeros and a strict, oriented comparison across and within the
+sections. Grouping the $j$ consecutive
+factorial factors gives $r!F_r={}_0F_{j-1}(\,;{\bf a};w/j^j)$,
+where ${\bf a}$ consists of $(r+\ell)/j$, $1\le\ell\le j$, omitting
+the entry $1$. Such hypergeometric functions with positive parameters
+have only real negative zeros by the Hurwitz--Hille
+theorem~\cite[Theorem 1]{sokal}; see also~\cite[Theorem 2]{baricz}.
+The same series
+for any positive denominator parameters has order $1/j$ by Stirling's
+formula. It is nonpolynomial, so Hadamard factorization gives infinitely
+many negative zeros and a genus-zero product.
+
+Let $f$ be one such normalized series and $g$ the series obtained by
+increasing one parameter $a$ by one. Then $af=ag+wg'$. Away from the
+zeros $-u$ of $g$, the derivative on the real axis of
+$af/g=a+\sum w/(w+u)$ is $\sum u/(w+u)^2>0$, counting multiplicities.
+The logarithmic derivatives converge locally off the poles. Hence a zero
+of $f$ away from the zeros of $g$ is simple. At a zero of $g$ of
+multiplicity $s$, the multiplicity in $f$ is exactly $s-1$ by
+$af=ag+wg'$ and the nonvanishing of $w$. Consequently a multiple zero
+of $f$ would persist at the same point through every successive shift of
+$a$. The shifted series tend locally uniformly to one since each
+nonconstant coefficient decreases to zero and is bounded by its
+original value. This proves simplicity.
+
+Coefficient comparison gives $jwF_r'+rF_r=F_{r-1}$ for $1\le r<j$,
+and $jF_0'=F_{j-1}$. At $w=-x$ the first ratio is
+\[
+ \frac{F_{r-1}(-x)}{F_r(-x)}
+ =r+j\sum_{\ell\ge1}\frac{x}{x-\lambda_{r,\ell}} .
+\]
+It decreases strictly from $r$ to $-\infty$ before the first pole,
+and from $+\infty$ to $-\infty$ in every following gap.
+Simplicity excludes a common zero at a pole. The logarithmic derivative
+of $F_0$ has one zero in each interior gap and none before the first pole.
+Thus $\lambda_{0,k}<\lambda_{1,k}<\cdots<
+\lambda_{j-1,k}<\lambda_{0,k+1}$ for each $k\ge1$.
+
+\section{Transfer to the finite ordered rows}
+For a fixed residue take a circle centered at zero with radius between
+$\lambda_{r,K+1}$ and $\lambda_{r,K+2}$, and small disjoint circles
+about the first $K+1$ limiting zeros inside it. Lemma~\ref{corr}
+and Rouch\'e's theorem give one zero counted with multiplicity in each
+small disk and exactly $K+1$ inside the large one for all large $d$,
+with no zeros on the chosen circles. Conjugation fixes the unique zero
+in each small disk. Shrinking the disks shows that the selected roots
+$w_{d,k}$ converge to $w_0=-\lambda_{r,k}$. The map $w\mapsto Gd^j/w$
+reverses the modulus inequalities. Its derivative is nonzero at these
+roots, and the prefactor in $R_d$ is nonzero there, so it preserves
+simplicity. The positive constant term of $O_{n,j}$ rules out a root at
+zero, and the top coefficient gives $R_d(0)>0$, so all remaining zeros
+of the original row have smaller modulus.
+
+The difference quotient of $F_r$ at $w_0$ tends to $F_r'(w_0)\ne0$,
+using its continuous extension when $w_{d,k}=w_0$.
+Evaluating Lemma~\ref{corr} at $w_{d,k}$ gives
+$d(w_{d,k}-w_0)\to-E_r(w_0)/F_r'(w_0)$.
+Expansion of $Gd^j/w_{d,k}$ yields Theorem~\ref{thm}'s formula
+with $C_{r,k}=GE_r(w_0)/(w_0^2 F_r'(w_0))$.
+
+Write $n=jd+r$ and $m=je+s$. If $e=d$, then $s>r$. Dividing the roots
+by $d^j$, the ladder gives $x_{n,k}<x_{m,k}<x_{n,k+1}$ eventually.
+Otherwise $e=d+1$ and $s\le r$, since $m-n\le j$. If $s<r$ the ladder
+gives $x_{m,k}<x_{n,k}<x_{m,k+1}$ because $(d+1)^j/d^j\to1$.
+If $s=r$, then $m=n+j$ and the leading constants at index $k$ coincide.
+The common correction coefficient multiplies a difference
+$(d+1)^{j-1}-d^{j-1}=o(d^{j-1})$. Thus the two-term expansion gives
+\[
+ \frac{x_{j(d+1)+r,k}-x_{jd+r,k}}{d^{j-1}}
+       \longrightarrow -jG/\lambda_{r,k}<0 .
+\]
+Different indices are separated at order $d^j$. Taking the maximum
+of the onsets for finitely many residues, gaps and indices concludes
+the proof.
+
+\paragraph{Code and data availability.}
+The accompanying source archive contains two exact arithmetic scripts
+using the last-block recurrence and rational coefficient
+extraction. The Lean development proves the reciprocal coefficient and
+limit formulas, the strict ladder, and the extreme-root window for the
+original ordered rows. Its statement map is supplied with the source.
+
+\paragraph{Disclosure.}
+ChatGPT assisted with the derivation, mathematical review, formalization
+and writing, and the author takes responsibility for the manuscript.
+
+\begin{thebibliography}{9}
+\bibitem{catalog} P.~Alexandersson, \emph{Real-rooted polynomials:
+open problems}, The Symmetric Functions Catalog, section on set partitions.
+\url{https://www.symmetricfunctions.com/realRootedOpenProblems.htm}.
+\bibitem{aw} C.~A.~Athanasiadis and D.~G.~Wagner, \emph{Veronese sections
+and interlacing matrices of polynomials and formal power series},
+\href{https://arxiv.org/abs/2404.12989v2}{arXiv:2404.12989v2} (2026).
+\bibitem{baricz} \'A.~Baricz and S.~Singh, \emph{Zeros of some special entire functions},
+\href{https://doi.org/10.1090/proc/13927}{Proc. Amer. Math. Soc. 146 (2018), 2207--2216}.
+\bibitem{fang} C.~Fang, \emph{Eventual interlacing of large-block
+set-partition polynomials},
+\href{https://hexagonmath.org/2611.01129v1}{hexagon:2611.01129v1} (2026).
+\bibitem{ps} A.~Yu.~Popov and A.~M.~Sedletskii,
+\emph{Distribution of roots of Mittag-Leffler functions},
+\href{https://doi.org/10.1007/s10958-013-1255-3}{J. Math. Sci. 190 (2013), 209--409}.
+\bibitem{sokal} A.~D.~Sokal, \emph{When does a hypergeometric function
+\({}_pF_q\) belong to the Laguerre--P\'olya class $LP^+$?},
+\href{https://doi.org/10.1016/j.jmaa.2022.126432}{J. Math. Anal. Appl. 515 (2022), 126432}.
+\end{thebibliography}
+\end{document}
